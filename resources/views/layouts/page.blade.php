@@ -12,8 +12,7 @@
 
     </head>
     <body>
-        <div id="app">
-        </div>
+        @yield('content')
 
         <script src="<?php echo URL::to('/'); ?>/js/app.js"></script>
     </body>

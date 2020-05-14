@@ -11,7 +11,7 @@
                 </md-toolbar>
 
                 <md-list>
-                    <md-list-item href="/">
+                    <md-list-item to="/" exact>
                         <md-icon>home</md-icon>
                         <span class="md-list-item-text">Home</span>
                     </md-list-item>
