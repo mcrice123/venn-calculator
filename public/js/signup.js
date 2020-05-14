@@ -152,7 +152,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Signup'
+  name: 'Signup',
+  validations: {
+    form: {
+      firstName: {
+        required: required,
+        minLength: minLength(1)
+      },
+      lastName: {
+        required: required,
+        minLength: minLength(3)
+      },
+      age: {
+        required: required,
+        maxLength: maxLength(3)
+      },
+      gender: {
+        required: required
+      },
+      email: {
+        required: required,
+        email: email
+      },
+      password: {
+        required: required,
+        minLength: minLength(1)
+      }
+    }
+  },
+  methods: {
+    getValidationClass: function getValidationClass(fieldName) {
+      var field = this.$v.form[fieldName];
+
+      if (field) {
+        return {
+          'md-invalid': field.$invalid && field.$dirty
+        };
+      }
+    },
+    clearForm: function clearForm() {
+      this.$v.$reset();
+      this.form.firstName = null;
+      this.form.lastName = null;
+      this.form.age = null;
+      this.form.gender = null;
+      this.form.email = null;
+    },
+    saveUser: function saveUser() {
+      var _this = this;
+
+      this.sending = true; // Instead of this timeout, here you can call your API
+
+      window.setTimeout(function () {
+        _this.lastUser = "".concat(_this.form.firstName, " ").concat(_this.form.lastName);
+        _this.userSaved = true;
+        _this.sending = false;
+
+        _this.clearForm();
+      }, 1500);
+    },
+    validateUser: function validateUser() {
+      this.$v.$touch();
+
+      if (!this.$v.$invalid) {
+        this.saveUser();
+      }
+    }
+  }
 });
 
 /***/ }),
