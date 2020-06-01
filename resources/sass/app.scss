@@ -1,1 +1,23 @@
 //
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.md-progress-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+.md-layout {
+    padding-top: 50px;
+}
+.md-card {
+    margin: 0 auto;
+    max-width: 400px;
+}

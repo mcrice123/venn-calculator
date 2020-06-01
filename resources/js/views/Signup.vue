@@ -1,3 +1,4 @@
+<!--
 <template>
     <div>
         <form novalidate class="md-layout" @submit.prevent="validateUser">
@@ -31,7 +32,7 @@
                         <label for="confirm">Confirm Password</label>
                         <md-input type="password" name="confirm" id="confirm" :disabled="false" />
                     </md-field>
-
+-->
                     <!--
                     <md-field :class="getValidationClass('email')">
                         <label for="email">Email</label>
@@ -40,7 +41,7 @@
                         <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
                     </md-field>
                     -->
-                </md-card-content>
+ <!--               </md-card-content>
 
                 <md-progress-bar md-mode="indeterminate" v-if="false" />
 
@@ -48,12 +49,13 @@
                     <md-button type="submit" class="md-primary" :disabled="false">Sign Up</md-button>
                 </md-card-actions>
             </md-card>
-
+-->
         <!-- <md-snackbar :md-active.sync="userSaved">The user {{ lastUser }} was saved with success!</md-snackbar>-->
-        </form>
+ <!--       </form>
     </div>
+    
 </template>
-
+-->
 <script>
     export default {
         name: 'Signup',

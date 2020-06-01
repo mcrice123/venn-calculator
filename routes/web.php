@@ -13,14 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+// Handles ALL AUTH requests
+Auth::routes();
+
+Route::get('/home', function () {
+    return view('auth/login');
 });
 
+// SHOW Login
 Route::get('/', function() {
-    return view('login');
+    return view('auth/login');
 });
 
-Route::get('/signup', function() {
-    return view('signup');
+
+
+Route::get('/test', 'HomeController@index')->name('test');
+
+Route::prefix('dashboard')->group(function () {
+    //Route::get('/', 'UserController@index')->name('user.index');
+    return view('home');
+
 });

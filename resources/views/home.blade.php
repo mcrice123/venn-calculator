@@ -1,6 +1,7 @@
 @extends('layouts.page')
 
 @section("content")
-    <div id="meow">
+    <div id="home">
+        <h1>HELLO</h1>
     </div>
 @endsection
