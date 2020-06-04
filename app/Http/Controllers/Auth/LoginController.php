@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-//use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
+use App\Providers\RouteServiceProvider;
 use Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -27,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
 
 
@@ -42,14 +43,56 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function sendLoginResponse(Request $request)
+   /* protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
-      //  $this->migrateCartContents();
-      //  $this->redeemPendingGiftCards($this->guard()->user());
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
+      }*/
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+   /* public function login(Request $request) {
+        Auth::login();
+        return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
+    }*/ 
+
+    /**
+ * The user has been authenticated.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  mixed  $user
+ * @return mixed
+ */
+/*protected function authenticated(Request $request, $user)
+{
+    dd($user);
+    return response([
+        //
+    ]);
+}*/
+
+    public function logout(Request $request) {
+     //   dd($request);
+        Auth::logout();
+    //    return redirect('/');
+    return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
     }
 

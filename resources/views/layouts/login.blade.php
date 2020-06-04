@@ -14,6 +14,5 @@
     <body>
         @yield('content')
 
-        <script src="<?php echo URL::to('/'); ?>/js/login.js"></script>
     </body>
 </html>

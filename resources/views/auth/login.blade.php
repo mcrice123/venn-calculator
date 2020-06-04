@@ -11,14 +11,14 @@
 
                 <md-card-content>
 
-                    <md-field>
+                    <md-field :class="getValidationClass('email')">
                         <label for="email">Email</label>
                         <md-input type="email" name="email" id="email" autocomplete="email" v-model="form.email" :disabled="sending" />
                         <span class="md-error" v-if="!$v.form.email.required">The email is required</span>
                         <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
                     </md-field>
 
-                    <md-field>
+                    <md-field :class="getValidationClass('password')">
                         <label for="password">Password</label>
                         <md-input type="password" name="password" id="password" v-model="form.password" :disabled="sending" />
                         <span class="md-error" v-if="!$v.form.password.required">The password is required</span>
@@ -34,6 +34,7 @@
             </md-card>
         </form>
     </div>
+    <script src="<?php echo URL::to('/'); ?>/js/login.js"></script>
 @endsection
 
 

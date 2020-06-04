@@ -13,7 +13,5 @@
     </head>
     <body>
         @yield('content')
-
-        <script src="<?php echo URL::to('/'); ?>/js/signup.js"></script>
     </body>
 </html>

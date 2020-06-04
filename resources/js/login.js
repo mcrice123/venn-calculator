@@ -4,13 +4,13 @@ import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default-dark.css' ;
 import axios from 'axios';
 
-import { validationMixin } from 'vuelidate'
+import { validationMixin } from 'vuelidate';
 import {
     required,
     email,
     minLength,
     maxLength
-} from 'vuelidate/lib/validators'
+} from 'vuelidate/lib/validators';
 
 window.axios = axios;
 Vue.use(VueMaterial);

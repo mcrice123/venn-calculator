@@ -2,7 +2,7 @@
 let routes = [
     {
         path: '/',
-        component: require('./views/Dashboard.vue').default
+        component: require('./views/Main.vue').default
     },
 ];
 

@@ -49949,9 +49949,11 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
     },
     validateUser: function validateUser() {
+      console.log(this.$v);
       this.$v.$touch();
 
       if (!this.$v.$invalid) {
+        console.log("valid");
         this.signup();
       }
     }
