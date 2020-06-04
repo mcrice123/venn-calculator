@@ -1,47 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <div id="enter-email">
+        <form novalidate action="{{ route('password.email') }}" method="POST" class="md-layout" @submit.prevent="validateUser">
+            @csrf
+            <md-card class="md-layout-item md-xsmall-size-100">
+                <md-card-header>
+                    <div class="md-title">Reset Password - Venn Calculator</div>
+                </md-card-header>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <md-card-content>
+                    <md-field :class="getValidationClass('email')">
+                        <label for="email">Email</label>
+                        <md-input type="email" name="email" id="email" autocomplete="email" v-model="form.email" :disabled="sending" />
+                        <span class="md-error" v-if="!$v.form.email.required">The email is required</span>
+                        <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
+                    </md-field>
+                </md-card-content>
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                <md-card-actions>
+                    <md-button href="/register" type="button" class="md-secondary">New User?</md-button>
+                    <md-button href="/" type="button" class="md-secondary">Login</md-button>
+                    <md-button type="submit" class="md-primary" :disabled="sending">Send Password Reset</md-button>
+                </md-card-actions>
+            </md-card>
+        </form>
     </div>
-</div>
+    <script src="<?php echo URL::to('/'); ?>/js/email.js"></script>
 @endsection

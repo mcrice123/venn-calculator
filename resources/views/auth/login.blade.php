@@ -28,7 +28,8 @@
                 </md-card-content>
 
                 <md-card-actions>
-                    <md-button href="/register" type="button" class="md-secondary">New User? Click here</md-button>
+                    <md-button href="/register" type="button" class="md-secondary">New User?</md-button>
+                    <md-button href="/password/reset" type="button" class="md-secondary">Forgot Password?</md-button>
                     <md-button type="submit" class="md-primary" :disabled="sending">Login</md-button>
                 </md-card-actions>
             </md-card>
