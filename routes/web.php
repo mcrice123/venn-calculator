@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', function() {
+    if (Auth::check()) {
+        // The user is logged in...
+        return view('dashboard');
+    }
+    else {
+        return view('auth/login');
+    }
+});
+
 Route::get('/', function () {
     if (Auth::check()) {
         // The user is logged in...
