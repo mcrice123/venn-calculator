@@ -1,9 +1,9 @@
-@extends('layouts.dashboard')
+@extends('layouts.page')
 
 @section('title', 'About Venn Calculator')
 @section('container', 'about')
 
-@section("inner-content")
+@section("content")
 
 <md-app-content>
     <p><strong>Venn Calculator is a report generator project set up to compare the costs of different items!</strong></p>
