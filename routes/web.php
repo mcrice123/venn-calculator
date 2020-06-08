@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function() {
     if (Auth::check()) {
         // The user is logged in...
-        return view('dashboard');
+        return view('home');
     }
     else {
         return view('auth/login');
@@ -26,7 +26,7 @@ Route::get('/home', function() {
 Route::get('/', function () {
     if (Auth::check()) {
         // The user is logged in...
-        return view('dashboard');
+        return view('home');
     }
     else {
         return view('auth/login');
@@ -42,3 +42,24 @@ Route::post('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/forgot-password', function() {
     return route('password.request');
 });
+
+Route::get('/register', function() {
+    return view('auth/register');
+});
+
+Route::get('/comparison', function() {
+    return view('comparison');
+});
+
+Route::get('/suppliers', function() {
+    return view('suppliers');
+});
+
+Route::get('/items', function() {
+    return view('items');
+});
+
+Route::get('/about', function() {
+    return view('about');
+});
+

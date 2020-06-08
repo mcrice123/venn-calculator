@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Home')
-@section('container', 'home')
+@section('title', 'New Comparison')
+@section('container', 'comparison')
 
 @section("inner-content")
 

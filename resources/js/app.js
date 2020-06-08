@@ -13,7 +13,7 @@ const linkActiveClass = 'router-link-active';
 
 // pass custom class to Vue Router
 const router = new VueRouter({
-  routes,
+ // routes,
   linkActiveClass
 });
 
@@ -26,9 +26,7 @@ new Vue({
    //     Dashboard,
   //  },
 
-   // template: '<dashboard></dashboard>',
-
-    router
+   // router
 
 });
 

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Home')
-@section('container', 'home')
+@section('title', 'Suppliers')
+@section('container', 'suppliers')
 
 @section("inner-content")
 
