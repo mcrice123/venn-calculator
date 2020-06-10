@@ -16,4 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/signup.js', 'public/js')
     .js('resources/js/email.js', 'public/js')
     .js('resources/js/pages/home.js', 'public/js/pages')
+    .js('resources/js/pages/about.js', 'public/js/pages')
+    .js('resources/js/pages/comparison.js', 'public/js/pages')
+    .js('resources/js/pages/suppliers.js', 'public/js/pages')
+    .js('resources/js/pages/items.js', 'public/js/pages')
     .sass('resources/sass/app.scss', 'public/css');

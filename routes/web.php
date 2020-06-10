@@ -51,9 +51,9 @@ Route::get('/comparison', function() {
     return view('comparison');
 });
 
-Route::get('/suppliers', function() {
-    return view('suppliers');
-});
+// Suppliers routes
+Route::get('/suppliers', 'UserController@suppliers');
+Route::get('/suppliers/list', 'UserController@suppliersList');
 
 Route::get('/items', function() {
     return view('items');

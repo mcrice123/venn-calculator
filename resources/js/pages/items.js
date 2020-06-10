@@ -6,14 +6,9 @@ import 'vue-material/dist/theme/default-dark.css' ;
 Vue.use(VueMaterial);
 
 new Vue({
-    el: '#home',
-    data: function() {
-        return [
-            
-        ];
-    },
+    el: '#items',
     mounted: function() {
-        console.log("HOME mounted!");
+        console.log("ITEMS mounted!");
     }
 });
 

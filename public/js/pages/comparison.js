@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -46087,10 +46087,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/pages/home.js":
-/*!************************************!*\
-  !*** ./resources/js/pages/home.js ***!
-  \************************************/
+/***/ "./resources/js/pages/comparison.js":
+/*!******************************************!*\
+  !*** ./resources/js/pages/comparison.js ***!
+  \******************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46110,25 +46110,22 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_material__WEBPACK_IMPORTED_MODULE_1___default.a);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#home',
-  data: function data() {
-    return [];
-  },
+  el: '#comparison',
   mounted: function mounted() {
-    console.log("HOME mounted!");
+    console.log("COMPARISON mounted!");
   }
 });
 
 /***/ }),
 
-/***/ 4:
-/*!******************************************!*\
-  !*** multi ./resources/js/pages/home.js ***!
-  \******************************************/
+/***/ 6:
+/*!************************************************!*\
+  !*** multi ./resources/js/pages/comparison.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/maria/Desktop/Development/venn-calculator/resources/js/pages/home.js */"./resources/js/pages/home.js");
+module.exports = __webpack_require__(/*! /Users/maria/Desktop/Development/venn-calculator/resources/js/pages/comparison.js */"./resources/js/pages/comparison.js");
 
 
 /***/ })
